@@ -55,29 +55,7 @@ public class ProjectUtils {
 		
 		 sortedMap.entrySet().stream().forEach(t->System.out.println(t));
 		
-		
-		/*
-		 * Comparator<Map.Entry<Project,Employee>> Comparator = new
-		 * Comparator<Map.Entry<Project,Employee>>() {
-		 * 
-		 * 
-		 * @Override public int compare(Entry<Project, Employee> o1 ,Entry<Project,
-		 * Employee> o2) { if(o1.getKey().getId()>o2.getKey().getId()) { return 1; }else
-		 * if(o1.getKey().getId()<o2.getKey().getId()) { return -1; } else { return 0; }
-		 * // TODO Auto-generated method stub } };
-		 * 
-		 * ArrayList<Map.Entry<Project,Employee>> sortedlist=new
-		 * ArrayList<Map.Entry<Project,Employee>>();
-		 * map.entrySet().stream().forEach(t->sortedlist.add(t));
-		 * Collections.sort(sortedlist, Comparator); Map<Project,Employee> sortedmap=new
-		 * TreeMap<Project,Employee>(); for(Map.Entry<Project,Employee> m:sortedlist) {
-		 * sortedmap.put(m.getKey(), m.getValue()); }
-		 * sortedmap.entrySet().stream().forEach(t->System.out.println(t));
-		 * 
-		 * map.entrySet().stream().forEach(t->System.out.println(t));
-		 */
-
-	}
+			}
 
 	public static void displayByProjectDomain(Map<Project, Employee> map) {
 		Comparator<Project> projectDomainComaprator = new Comparator<Project>() {
@@ -89,32 +67,8 @@ public class ProjectUtils {
 			}
 		};
 		
-		
-		
-		/*
-		 * Comparator<Map.Entry<Project, Employee>> Comparator = new
-		 * Comparator<Map.Entry<Project, Employee>>() {
-		 * 
-		 * @Override public int compare(Entry<Project, Employee> o1, Entry<Project,
-		 * Employee> o2) {
-		 * 
-		 * return o1.getKey().getDomain().compareTo(o2.getKey().getDomain()); } };
-		 */
-		/*
-		 * ArrayList<Map.Entry<Project,Employee>> sortedlist=new
-		 * ArrayList<Map.Entry<Project,Employee>>();
-		 * map.entrySet().stream().forEach(t->sortedlist.add(t));
-		 * Collections.sort(sortedlist, Comparator);
-		 */
 		map.entrySet().stream().sorted(Map.Entry.comparingByKey(projectDomainComaprator)).forEach(t -> System.out.println(t));
 		;
-		/*
-		 * Map<Project,Employee> sortedmap=new TreeMap<Project,Employee>();
-		 * for(Map.Entry<Project,Employee> m:sortedlist) { sortedmap.put(m.getKey(),
-		 * m.getValue()); }
-		 * sortedmap.entrySet().stream().forEach(t->System.out.println(t));
-		 */
-
 	}
 
 	public static void main(String args[]) throws ParseException {
